@@ -8,7 +8,7 @@ export default function SpinnerButton(props) {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  // let buttonText;
+  
   
   // if (props.isError) {
 
