@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+.about {
+	height: max-content;
+	/* height: 100vh; */
+	width: 100%;
+	max-height: 1024px;
+	max-width: 1440px;
+	margin: 12rem auto;
+	display: flex;
+	/* align-items: ; */
+	padding: 6rem 8rem;
+}
+
+.aboutImage {
+	max-height: 76.8rem;
+	flex-basis: 50%;
+	min-width: 48rem;
+	display: block;
+}
+
+.aboutImage img:first-of-type {
+	height: 100%;
+	max-height: 76.8rem !important;
+	width: auto;
+	min-width: 42rem;
+	max-width: 56rem;
+	object-position: center;
+	object-fit: fill;
+}
+
+/* .aboutImage > span:last-of-type {
+	display: none !important;
+} */
+
+.aboutImageMobile {
+	display: none !important;
+}
+
+.aboutContent {
+	margin-left: 10rem;
+	flex-basis: 50%;
+	align-self: baseline;
+}
+
+.aboutContent > h1 {
+	font-size: 4rem;
+	font-weight: 300;
+	font-family: "Merriweather", serif;
+	text-align: center;
+	color: #122867;
+	margin-bottom: 3.2rem;
+}
+
+.aboutContentText {
+	font-size: 1.8rem;
+	font-family: "Segoe UI";
+	text-align: justify;
+	color: #374151;
+}
+
+.aboutContentText > p {
+	margin-bottom: 3rem;
+}
+
+.aboutContentIcons {
+	max-height: 42px;
+	margin-top: 10rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 6.4rem;
+	cursor: pointer;
+}
+
+/* .icon {
+	object-fit: contain;
+	width: 100% !important;
+	position: relative !important;
+	height: unset !important;
+} */
+
+/* @media (max-width: 1400px) {
+	.aboutContentText > p:last-of-type {
+		display: none;
+	}
+} */
+
+@media (max-width: 900px) {
+	.about {
+		padding: 5rem;
+	}
+
+	.aboutImage {
+		flex-basis: 45%;
+		min-width: 30rem;
+		height: 50%;
+	}
+
+	.aboutContent {
+		margin-left: 3rem;
+		width: 45%;
+	}
+
+	.aboutContentText > p:last-of-type {
+		display: none;
+	}
+
+	
+
+	.aboutContentIcons {
+		padding: 0;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 32rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.about {
+		flex-direction: column;
+		padding: 0 1.6rem;
+		width: 100%;
+    min-height: 100vh;
+    height: max-content;
+	}
+
+	.aboutImage {
+		width: calc(100vw - 3.2rem);
+		max-height: 343px;
+		text-align: center;
+	}
+
+	.aboutImage > span:first-of-type {
+		/* max-height: 343px;
+		object-fit: contain; */
+		display: none !important;
+	}
+
+	.aboutImageMobile {
+		height: auto;
+		max-height: 31rem !important;
+		width: 100%;
+		max-width: 35rem;
+		margin: 0 auto;
+		display: block !important;
+	}
+
+	.aboutContent {
+		margin: 6.4rem 0 0;
+		width: 100%;
+	}
+
+	.aboutContentText > p:last-of-type {
+		display: block;
+	}
+
+	.aboutContentIcons {
+    margin-top: 5rem;
+  }
+}
+
+
+

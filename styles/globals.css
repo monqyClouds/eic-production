@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before, 
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	/* This defines what 1rem is wrt browser default font-size. */
+	font-size: 62.5%;	
+}
+
+body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+	html {
+		font-size: 37.5%;
+	}
+
+}
+
+@media (max-width: 900px) {
+	html {
+		font-size: 44%;
+	}
+}
+
+@media (max-width: 1200px) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+@media (min-width: 1440px) {
+	body {
+		width: 1440px;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 1800px) {
+	html {
+		font-size: 75%;
+	}
+}
