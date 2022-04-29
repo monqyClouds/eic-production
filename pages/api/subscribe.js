@@ -6,8 +6,10 @@ import clientPromise from "../../lib/mongodb";
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
 // const uri = "mongodb://127.0.0.1:27017/eic"
+const uri =
+	"mongodb+srv://niteontech:3KbCdVppGbilGD24@cluster0.zdpsu.mongodb.net/EICSchool?retryWrites=true&w=majority";
 
 const handler = async (req, res) => {
 	const data = req.body;

@@ -23,8 +23,8 @@ const handler = async (req, res) => {
 					rejectUnauthorized: false,
 				},
 				auth: {
-					user: process.env.NODEMAILERUSER,
-					pass: process.env.NODEMAILERPASS,
+					user: "tech@niteonstore.com",
+					pass: "xQhKGl-fa-72",
 				},
 				secureConnection: false,
 			})
