@@ -9,10 +9,6 @@ export default function SpinnerButton(props) {
   if (!mounted) return null;
 
   
-  
-  // if (props.isError) {
-
-  // }
 
   return (
     <button className={classes["spinner-button"]} disabled={isLoading}>
