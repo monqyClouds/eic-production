@@ -35,7 +35,7 @@ const handler = async (req, res) => {
 
   async function saveClientMailAddress(mailData) {
     try {
-      const client = await clientPromise;
+      const client = await MongoClient.connect(uri);
       const db = client.db();
 			
 			const subscribedUsersCollection = db.collection("subscribedUsers");
