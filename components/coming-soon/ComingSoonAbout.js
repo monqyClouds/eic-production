@@ -107,11 +107,11 @@ export default function ComingSoonAbout() {
 							srcSet="
                 /icons/instagram.svg 48w
               "
-							height={40}
-							width={40}
+							// height={40}
+							// width={40}
 							alt="Instagram Logo"
 							layout="fill"
-							sizes="(max-width: 600px) 32px, 48px"
+							sizes="(max-width: 600px) 28px, 42px"
 						/>
 					</a>
 				</div>

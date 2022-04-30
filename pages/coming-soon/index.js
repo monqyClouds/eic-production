@@ -14,7 +14,6 @@ export default function ComingSoon() {
 	}
 
 	async function subscribeUserHandler(userMail) {
-		console.log(process.env.MONGODB_URI)
 		const response = await fetchApi("../api/subscribe", userMail)
 		return response;
 	}
