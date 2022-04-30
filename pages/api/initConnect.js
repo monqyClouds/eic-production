@@ -1,9 +1,11 @@
 import clientPromise from "../../lib/mongodb"
 
 const handler = async (req, res) => {
-  await clientPromise;
+  const response = await clientPromise;
+  const db = response.db();
+  const coll = db.collections("subscribedUsers");
   if (req.method === "POST") {
-    res.status(200).send();
+    res.status(200).json({coll});
   }
 }
 
