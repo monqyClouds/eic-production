@@ -21,6 +21,7 @@ export default function ComingSoonHeader({subscribeToNews}) {
 		}
 
 		setIsSubmitting(true);
+
 		const response = await subscribeToNews({ email });
 
 		if (!response instanceof Error) {

@@ -19,6 +19,11 @@ export default function ComingSoon() {
 		return response;
 	}
 
+	async function initConnect() {
+		const response = await fetchApi("../api/init-connect", {});
+		return response;
+	}
+
 	async function fetchApi(url, payload) {
 		try {
 			const response = await fetch(url, {
@@ -30,7 +35,7 @@ export default function ComingSoon() {
 				},
 			});
 			if (!response.ok) throw new Error("Message not sent");
-			return response.ok;
+			return true;
 		} catch (error) {
 			return error;
 		}

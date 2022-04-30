@@ -1,15 +1,12 @@
 require("dotenv").config();
 
-import { MongoClient } from "mongodb";
 import clientPromise from "../../lib/mongodb";
 
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 
-// const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;
 // const uri = "mongodb://127.0.0.1:27017/eic"
-const uri =
-	"mongodb+srv://niteontech:3KbCdVppGbilGD24@cluster0.zdpsu.mongodb.net/EICSchool?retryWrites=true&w=majority";
 
 const handler = async (req, res) => {
 	const data = req.body;
@@ -22,7 +19,7 @@ const handler = async (req, res) => {
       console.log(performance.now() - begin);
       if (response.value === "SAVED") {
         res.status(202).json();
-        await notifySubscriber();
+        notifySubscriber();
       } else if (response.value === "ALREADY-SAVED") {
 				res.status(208).json();
 			} else if (response.value === "ERROR") {
@@ -37,7 +34,7 @@ const handler = async (req, res) => {
 
   async function saveClientMailAddress(mailData) {
     try {
-      const client = await MongoClient.connect(uri);
+      const client = await clientPromise;
       const db = client.db();
 			
 			const subscribedUsersCollection = db.collection("subscribedUsers");
