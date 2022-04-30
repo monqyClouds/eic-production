@@ -114,7 +114,7 @@ export default function ComingSoonContact({ sendContactMsg }) {
 					<div className={classes.contactFooterTextIcons}>
 						<a href="https://www.facebook.com/Eicnigeriaa/" target={"_blank"}>
 							<Image
-								src="/icons/facebook.svg"
+								src="/icons/Facebook.svg"
 								alt="facebook Logo"
 								width={32}
 								height={32}
