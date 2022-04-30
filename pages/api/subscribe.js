@@ -21,7 +21,7 @@ const handler = async (req, res) => {
 				await notifySubscriber();
 				res.status(202).json({ resp: response.value });
 			} else if (response.value === "ALREADY-SAVED") {
-        console.log("sending data - already saved!")
+				console.log("sending data - already saved!");
 				res.status(208).json({ resp: response.value });
 			} else if (response.value === "ERROR") {
 				res.status(503).json();
@@ -256,7 +256,12 @@ const handler = async (req, res) => {
 			html: mailTemplate,
 		};
 
-		transporter.sendMail(mailData).catch(err => console.log(err));
+		transporter
+			.sendMail(mailData)
+			.then((data) => {
+				console.log(data);
+			})
+			.catch((err) => console.log(err));
 	}
 };
 
