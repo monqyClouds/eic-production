@@ -18,8 +18,8 @@ const handler = async (req, res) => {
 			const response = await saveClientMailAddress(req.body);
 			// console.log(performance.now() - begin);
 			if (response.value === "SAVED") {
+				await notifySubscriber();
 				res.status(202).json({ resp: response.value });
-				notifySubscriber();
 			} else if (response.value === "ALREADY-SAVED") {
         console.log("sending data - already saved!")
 				res.status(208).json({ resp: response.value });
