@@ -9,8 +9,6 @@ const logoPath = path.join(__dirname, "../../public/images/Logo.png");
 console.log(logoPath);
 
 const handler = async (req, res) => {
-	const begin = performance.now();
-
 	const data = req.body;
 	console.log(data);
 
@@ -46,8 +44,6 @@ const handler = async (req, res) => {
 
 		try {
 			const mailResponse = await transporter.sendMail(mailData);
-
-			console.log(performance.now() - begin);
 
 			if (mailResponse instanceof Error) {
 				throw Error(mailResponse.response);

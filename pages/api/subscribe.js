@@ -21,6 +21,7 @@ const handler = async (req, res) => {
 				res.status(202).json({ resp: response.value });
 				notifySubscriber();
 			} else if (response.value === "ALREADY-SAVED") {
+        console.log("sending data - already saved!")
 				res.status(208).json({ resp: response.value });
 			} else if (response.value === "ERROR") {
 				res.status(503).json();
