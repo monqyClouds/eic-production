@@ -14,9 +14,9 @@ const handler = async (req, res) => {
 
 	if (req.method === "POST" && !Object.keys(data).includes("message")) {
 		try {
-			const begin = performance.now();
+			// const begin = performance.now();
 			const response = await saveClientMailAddress(req.body);
-			console.log(performance.now() - begin);
+			// console.log(performance.now() - begin);
 			if (response.value === "SAVED") {
 				res.status(202).json({ resp: response.value });
 				notifySubscriber();
@@ -255,7 +255,7 @@ const handler = async (req, res) => {
 			html: mailTemplate,
 		};
 
-		await transporter.sendMail(mailData);
+		transporter.sendMail(mailData).catch(err => console.log(err));
 	}
 };
 

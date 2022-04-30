@@ -1,13 +1,14 @@
 import clientPromise from "../../lib/mongodb";
 
 const handler = async (req, res) => {
-	const begin = performance.now();
+	// const begin = performance.now();
 	try {
-		const response = await clientPromise;
-		const db = response.db();
+		const client = await clientPromise;
+		const db = client.db();
 		const list = await db.collection("subscribedUsers").findOne({});
 		if (req.method === "POST") {
-			console.log({ list, completedIn: performance.now() - begin });
+      // const completedIn = performance.now() - begin;
+			console.log({ list });
 
 			res.status(200).json({ list });
 		}
