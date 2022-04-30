@@ -10,45 +10,44 @@ const uri = process.env.MONGODB_URI;
 
 const handler = async (req, res) => {
 	const data = req.body;
-  console.log(data);
+	console.log(data);
 
-  if (req.method === "POST" && !Object.keys(data).includes("message")) {
-    try {
-      const begin = performance.now();
-      const response = await saveClientMailAddress(req.body);
-      console.log(performance.now() - begin);
-      if (response.value === "SAVED") {
-        res.status(202).json();
-        notifySubscriber();
-      } else if (response.value === "ALREADY-SAVED") {
-				res.status(208).json();
+	if (req.method === "POST" && !Object.keys(data).includes("message")) {
+		try {
+			const begin = performance.now();
+			const response = await saveClientMailAddress(req.body);
+			console.log(performance.now() - begin);
+			if (response.value === "SAVED") {
+				res.status(202).json({ resp: response.value });
+				notifySubscriber();
+			} else if (response.value === "ALREADY-SAVED") {
+				res.status(208).json({ resp: response.value });
 			} else if (response.value === "ERROR") {
 				res.status(503).json();
 			}
-    } catch (err) {
-      console.log(err.message);
-      res.status(500);
-    }
-  }
-  
+		} catch (err) {
+			console.log(err.message);
+			res.status(500);
+		}
+	}
 
-  async function saveClientMailAddress(mailData) {
-    try {
-      const client = await clientPromise;
-      const db = client.db();
-			
+	async function saveClientMailAddress(mailData) {
+		try {
+			const client = await clientPromise;
+			const db = client.db();
+
 			const subscribedUsersCollection = db.collection("subscribedUsers");
 
 			const userIsSubscribed = await subscribedUsersCollection.findOne({
 				email: mailData.email,
-      });
+			});
 
 			if (userIsSubscribed) {
 				return { value: "ALREADY-SAVED" };
-      }
-      
-      await subscribedUsersCollection.insertOne(mailData);
-      
+			}
+
+			await subscribedUsersCollection.insertOne(mailData);
+
 			return { value: "SAVED" };
 		} catch (error) {
 			console.log(error);
@@ -56,7 +55,7 @@ const handler = async (req, res) => {
 		}
 	}
 
-  async function notifySubscriber() {
+	async function notifySubscriber() {
 		const transporter = nodemailer.createTransport(
 			smtpTransport({
 				port: 465,

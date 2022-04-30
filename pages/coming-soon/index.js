@@ -14,8 +14,25 @@ export default function ComingSoon() {
 	}
 
 	async function subscribeUserHandler(userMail) {
-		const response = await fetchApi("../api/subscribe", userMail)
-		return response;
+
+		const response5 = async () => {
+			const begin = performance.now();
+			const response = await fetch("/api/subscribe", {
+				method: "POST",
+				body: JSON.stringify(userMail),
+				headers: {
+					Accept: "application/json, text/plain, */*",
+					"Content-Type": "application/json",
+				},
+			});
+			const res = await response.json();
+			console.log({ res, completedIn: performance.now() - begin });
+			return res;
+		};
+
+		// const response = await fetchApi("../api/subscribe", userMail)
+		const res = await response5();
+		return res;
 	}
 
 	async function initConnect() {

@@ -1,18 +1,20 @@
-import clientPromise from "../../lib/mongodb"
+import clientPromise from "../../lib/mongodb";
 
 const handler = async (req, res) => {
-  try { 
-    const response = await clientPromise;
+	const begin = performance.now();
+	try {
+		const response = await clientPromise;
 		const db = response.db();
-		const coll = db.collections("subscribedUsers");
-		const list = await coll.find();
+		const list = await db.collection("subscribedUsers").findOne({});
 		if (req.method === "POST") {
-			res.status(200).json({list});
+			console.log({ list, completedIn: performance.now() - begin });
+
+			res.status(200).json({ list });
 		}
-  } catch (err) {
-    res.status(400).send();
-  }
-  
-}
+	} catch (err) {
+		console.log({ err, completedIn: performance.now() - begin });
+		res.status(400).send();
+	}
+};
 
 export default handler;
