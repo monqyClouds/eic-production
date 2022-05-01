@@ -14,12 +14,10 @@ const handler = async (req, res) => {
 
 	if (req.method === "POST" && !Object.keys(data).includes("message")) {
 		try {
-			// const begin = performance.now();
 			const response = await saveClientMailAddress(req.body);
-			// console.log(performance.now() - begin);
 			if (response.value === "SAVED") {
-				await notifySubscriber();
-				res.status(202).json({ resp: response.value });
+        res.status(202).json({ resp: response.value });
+        notifySubscriber();
 			} else if (response.value === "ALREADY-SAVED") {
 				console.log("sending data - already saved!");
 				res.status(208).json({ resp: response.value });
@@ -256,12 +254,12 @@ const handler = async (req, res) => {
 			html: mailTemplate,
 		};
 
-		transporter
-			.sendMail(mailData)
-			.then((data) => {
-				console.log(data);
-			})
-			.catch((err) => console.log(err));
+    try {
+      const res = await transporter.sendMail(mailData)
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
 	}
 };
 

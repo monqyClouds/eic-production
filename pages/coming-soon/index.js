@@ -8,35 +8,17 @@ import styles from "../../styles/Home.module.css";
 
 export default function ComingSoon() {
 	async function contactUsHandler(messageData) {
-		console.log(messageData);
-		const response = await fetchApi("../api/contact", messageData)
+		const response = await fetchApi("/api/contact", messageData);
 		return response;
 	}
 
 	async function subscribeUserHandler(userMail) {
-
-		const response5 = async () => {
-			const begin = performance.now();
-			const response = await fetch("/api/subscribe", {
-				method: "POST",
-				body: JSON.stringify(userMail),
-				headers: {
-					Accept: "application/json, text/plain, */*",
-					"Content-Type": "application/json",
-				},
-			});
-			const res = await response.json();
-			console.log({ res, completedIn: performance.now() - begin });
-			return res;
-		};
-
-		// const response = await fetchApi("../api/subscribe", userMail)
-		const res = await response5();
-		return res;
+		const response = await fetchApi("/api/subscribe", userMail);
+		return response;
 	}
 
 	async function initConnect() {
-		const response = await fetchApi("../api/init-connect", {});
+		const response = await fetchApi("/api/init-connect", {});
 		return response;
 	}
 
@@ -50,10 +32,12 @@ export default function ComingSoon() {
 					"Content-Type": "application/json",
 				},
 			});
-			if (!response.ok) throw new Error("Message not sent");
-			return true;
-		} catch (error) {
-			return error;
+			if (!response.ok) throw new Error("request not fullfiled");
+			const res = await response.json();
+			console.log({ res });
+			return { status: response.status, value: res };
+		} catch (err) {
+			return err;
 		}
 	}
 
@@ -62,15 +46,29 @@ export default function ComingSoon() {
 			<Head>
 				<title>EIC</title>
 				<meta name="description" content="Entrepreneurship Innovation Center" />
-				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="/favicon-16x16.png"
+				/>
 				<link rel="manifest" href="/site.webmanifest" />
 			</Head>
 
 			<main className={styles.main}>
 				<ComingSoonHeader subscribeToNews={subscribeUserHandler} />
-        <ComingSoonAbout />
+				<ComingSoonAbout />
 				<ComingSoonContact sendContactMsg={contactUsHandler} />
 			</main>
 		</div>
