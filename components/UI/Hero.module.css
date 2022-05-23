@@ -1,0 +1,68 @@
+.heroSection {
+  height: 83.2rem;
+  width: 100%;
+  background-image: linear-gradient(0deg, rgba(4, 23, 73, 0.8), rgba(4, 23, 73, 0.8)), url("../../public/images/lbs frontview.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #fff;
+  position: relative;
+}
+
+.heroContainer {
+  width: 100%;
+  max-width: 122rem;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.heroText {
+  min-height: 32.8rem;
+  height: max-content;
+  width: 82.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.heroSection h1 {
+  display: block;
+  width: 82.2rem;
+  height: auto;
+  min-height: 15rem;
+  font-family: Merriweather;
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 9rem;
+}
+
+.heroSection h3 {
+  margin-top: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+}
+
+.heroSection button {
+  margin-top: 5rem;
+  width: 22rem;
+  height: 5.2rem;
+  /* padding: 12px 32px 16px; */
+  border: 0;
+  outline: none;
+  background-color: #FF7A5C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 2.8rem;
+}

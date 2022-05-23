@@ -1,0 +1,88 @@
+.sectionFaq {
+  min-height: 90rem;
+  height: max-content;
+  background-color: #F9FAFB;
+  padding: 9rem 0;
+}
+
+.faqContainer {
+  width: 100%;
+  max-width: 160rem;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faqContainer h2 {
+  margin: 4rem 0;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 4.8rem;
+  font-family: Merriweather;
+  color: #122867;
+}
+
+.faqList {
+  /* height: 65.6rem; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.faqListItemTitle {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000719;
+  display: inline;
+}
+
+.faqListItem {
+  height: 10rem;
+  min-height: 10rem;
+  width: 100%;
+  padding: 0 11.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #F5F5FF;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000719;
+}
+
+.faqList li i {
+  margin-right: 2rem;
+  color: #FF7A5C;
+}
+
+.faqCta h3 {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #122867;
+}
+
+.faqCta a {
+  display: block;
+  height: 5.6rem;
+  text-align: center;
+  
+  font-size: 1.8rem;
+  line-height: 5.6rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000719;
+  background-color: #FF7A5C;
+}

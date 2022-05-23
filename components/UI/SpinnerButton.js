@@ -8,8 +8,6 @@ export default function SpinnerButton(props) {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  
-
   return (
     <button className={classes["spinner-button"]} disabled={isLoading}>
       {isLoading && <span className={classes["loading-spinner"]}></span>}

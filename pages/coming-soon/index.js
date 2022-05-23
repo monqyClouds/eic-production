@@ -7,40 +7,6 @@ import ComingSoonHeader from "../../components/coming-soon/ComingSoonHeader";
 import styles from "../../styles/Home.module.css";
 
 export default function ComingSoon() {
-	async function contactUsHandler(messageData) {
-		const response = await fetchApi("/api/contact", messageData);
-		return response;
-	}
-
-	async function subscribeUserHandler(userMail) {
-		const response = await fetchApi("/api/subscribe", userMail);
-		return response;
-	}
-
-	async function initConnect() {
-		const response = await fetchApi("/api/init-connect", {});
-		return response;
-	}
-
-	async function fetchApi(url, payload) {
-		try {
-			const response = await fetch(url, {
-				method: "POST",
-				body: JSON.stringify(payload),
-				headers: {
-					Accept: "application/json, text/plain, */*",
-					"Content-Type": "application/json",
-				},
-			});
-			if (!response.ok) throw new Error("request not fullfiled");
-			const res = await response.json();
-			console.log({ res });
-			return { status: response.status, value: res };
-		} catch (err) {
-			return err;
-		}
-	}
-
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -73,4 +39,33 @@ export default function ComingSoon() {
 			</main>
 		</div>
 	);
+}
+
+async function contactUsHandler(messageData) {
+	const response = await fetchApi("/api/contact", messageData);
+	return response;
+}
+
+export async function subscribeUserHandler(userMail) {
+	const response = await fetchApi("/api/subscribe", userMail);
+	return response;
+}
+
+async function fetchApi(url, payload) {
+	try {
+		const response = await fetch(url, {
+			method: "POST",
+			body: JSON.stringify(payload),
+			headers: {
+				Accept: "application/json, text/plain, */*",
+				"Content-Type": "application/json",
+			},
+		});
+		if (!response.ok) throw new Error("request not fullfiled");
+		const res = await response.json();
+		console.log({ res });
+		return { status: response.status, value: res };
+	} catch (err) {
+		return err;
+	}
 }

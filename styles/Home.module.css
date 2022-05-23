@@ -5,9 +5,9 @@
   align-items: center;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
   .main {
-    width: 1440px;
+    /* width: 1440px; */
     margin: 0 auto;
   }
 }
