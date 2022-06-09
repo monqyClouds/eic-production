@@ -94,7 +94,7 @@ export default function BlogList() {
 					fontWeight={300}
 					color="#122867"
 				>
-					Top Posts From The EIC
+					Top News From The EIC
 				</Heading>
 
 				<Splide

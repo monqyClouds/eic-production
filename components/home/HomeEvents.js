@@ -33,7 +33,7 @@ export default function HomeEvents() {
 	return (
 		<section className={styles.sectionEvents}>
 			<div className={styles.eventsContainer}>
-				<h2>Upcoming Events</h2>
+				<h2>Upcoming/Ongoing Events</h2>
         <div>
           <div className={styles.listShadow}>
 					<ul className={styles.eventList}>

@@ -1,0 +1,23 @@
+/* @import "@splidejs/react-splide/css"; */
+
+.splide__arrows {
+  /* display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  margin: 0 auto 5.5rem; */
+  color: #E05434;
+}
+
+.splide__arrows button {
+  background-color: #fff;
+  color: #E05434;
+  font-size: 4rem;
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  
+}
+
+.splide__arrows .splide__arrow {
+  color: #E05434;
+}

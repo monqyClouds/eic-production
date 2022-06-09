@@ -1,6 +1,5 @@
 .sectionEvents {
   height: 102.2rem;
-  max-height: 100vh;
   width: 100%;
   background-color: #111827;
 }
@@ -20,7 +19,7 @@
   font-weight: 700;
   font-family: Merriweather;
   line-height: 6rem;
-  width: 27rem;
+  width: 29rem;
 }
 
 .eventsContainer > div {

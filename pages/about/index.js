@@ -1,6 +1,11 @@
 import Head from "next/head";
+import MainNavigation from "../../components/layout/MainNavigation";
 import Hero from "../../components/UI/Hero";
-import Sponsors from "../../components/UI/Sponsors";
+import AboutGallery from "../../components/about/AboutGallery";
+import AboutOutcome from "../../components/about/AboutOutcome";
+import AboutTraining from "../../components/about/AboutTraining";
+import AboutTeam from "../../components/about/AboutTeam";
+import ApplyCta from "../../components/UI/ApplyCta";
 
 export default function HomePage() {
 	return (
@@ -30,9 +35,21 @@ export default function HomePage() {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 			</Head>
+			<MainNavigation />
 
-			<Hero tagline="Empowering Youths For Sustainable Development" />
-			<Sponsors />
+			<Hero
+				tagline="Empowering Youths For Sustainable Development"
+				linkText={"Learn More"}
+				linkAddress={"/admissions"}
+				bgImage={
+					'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("/images/african-american-lady-safety-helmet-with-notebook-near-building-construction.jpg")'
+				}
+			/>
+			<AboutGallery />
+			<AboutOutcome />
+			<AboutTraining />
+			<AboutTeam />
+			<ApplyCta />
 		</div>
 	);
 }

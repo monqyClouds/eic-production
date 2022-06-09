@@ -107,7 +107,7 @@ export default function FAQ() {
 							More Questions?
 						</Heading>
 						<Link href="/contact" passHref>
-							<Center bg="#FF7A5C" h="5.6rem" color="#000719" fontSize="1.8rem" fontWeight="600" cursor="pointer">
+							<Center bg="transparent" h="5.6rem" color="#FF7A5C" fontSize="1.8rem" border={"2px solid #FF7A5C"} borderRadius={"0.8rem"} fontWeight="600" cursor="pointer">
 								Contact Us
 								<Icon as={BsArrowRightShort} ml=".5rem"/>
 							</Center>

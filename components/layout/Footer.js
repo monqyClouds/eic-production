@@ -57,7 +57,6 @@ export default function Footer({ subscribeToNews }) {
 					</div>
 					<div className={styles.footerTopRight}>
 						<div>
-							<h2>Sponsored By:</h2>
 							<div className={styles.sponsorLogos}>
 								<span>
 									<Image
@@ -71,8 +70,8 @@ export default function Footer({ subscribeToNews }) {
 									<Image
 										src="/images/boi logo.png"
 										alt="BOI logo"
-										width={117}
-										height={40}
+										width={175}
+										height={60}
 									/>
 								</span>
 							</div>
@@ -82,16 +81,19 @@ export default function Footer({ subscribeToNews }) {
 							<nav>
 								<ul>
 									<li>
+										<Link href="/">Home</Link>
+									</li>
+									<li>
 										<Link href="/about">About Us</Link>
 									</li>
 									<li>
 										<Link href="/admissions">Admissions and Enquiry</Link>
 									</li>
 									<li>
-										<Link href="/blog">Blog</Link>
+										<Link href="/contact">Contact Us</Link>
 									</li>
 									<li>
-										<Link href="/contact">Contact</Link>
+										<Link href="/blog">Blog</Link>
 									</li>
 								</ul>
 							</nav>
